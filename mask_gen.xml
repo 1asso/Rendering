@@ -1,0 +1,41 @@
+<scene version="2.2.1">
+  
+  <integrator id="integrator_aov" name="render" type="aov">
+    <string name="aovs" value="position:position" />
+    <integrator name="path_integrator" type="path">
+      <integer name="max_depth" value="-1" />
+      <integer name="samples_per_pass" value="2" />
+    </integrator>
+  </integrator>
+    
+  <shape type="obj">
+    <string name="filename" value="assets/obj/884.obj" />
+
+    <emitter type="area">
+      <spectrum name="radiance" value="20.0" />
+    </emitter>
+    <transform name="to_world">
+        <translate value="2.901727201403948, -0.5558550619572813, 2.744201826153992" />
+        <scale value="0.04654171458021634" />
+        <rotate angle="100.41504276222986" z="1.0" />
+    </transform>
+  </shape>
+  
+
+  <sensor id="sensor_camera" type="perspective">
+    <string name="focal_length" value="36.0" />
+    <sampler id="sensor_camera_sampler" type="stratified">
+      <integer name="sample_count" value="25" />
+    </sampler>
+    <film id="sensor_camera_film" type="hdrfilm">
+      <integer name="height" value="1024" />
+      <integer name="width" value="1024" />
+      <string name="pixel_format" value="rgba" />
+      <string name="component_format" value="float32" />
+    </film>
+    <transform name="to_world">
+      <lookat origin="0, 0, 1" target="0, 0, 0" up="0, 1, 0" />
+    </transform>
+  </sensor>
+  
+</scene>

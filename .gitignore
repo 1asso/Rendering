@@ -1,0 +1,7 @@
+*.pyc
+*.png
+*.obj
+*.flo
+*.blend
+*.blend1
+.DS_Store
